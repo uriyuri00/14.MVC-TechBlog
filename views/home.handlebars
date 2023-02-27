@@ -5,10 +5,12 @@
     <h2>Welcome, {{name}}!</h2>
   </div>
   <div class="card">
-    <h5 class="card-title">{{post.title}}</h5>
+    <h5 class="card-title">{{post.title}}</h5> <!--여기서 말하는 post는 어딘가-->
   <div class="card-body">
-    <p class="card-text">{{Post.text}}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <p class="card-text">{{post.post_text}}</p>
+    <div class="card">
+          <a href="#" class="btn btn-primary">Comment</a>
+    </div>
   </div>
 </div>
 </div>
