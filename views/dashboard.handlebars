@@ -3,18 +3,43 @@
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
-      <button class="btn btn-primary">post!</button>
 
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Post:</h3>
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-      <p>Created by {{user.name}} on {{format_date date_created}}</p>
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="post-title">post title:</label>
+        <input class="form-input" type="text" id="post-title" name="post-title" />
+      </div>
+      <div class="form-group">
+        <label for="post-text">post text :</label>
+        <textarea class="form-input" type="text" id="post-text" name="post-text"></textarea>
+      </div>
 
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">{{  }}</p>
-    <a href="#" class="card-link">Card link</a>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
   </div>
-      <button class="btn btn-primary">post!</button>
 
+  {{#if posts.length}}
+  <div class="col-md-6 project-list">
+    <h3>My Posts:</h3>
+
+    {{#each posts as |post|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/dashboard/{{post.id}}">{{post.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
 </div>
+
+<script src="./js/profile.js"></script>

@@ -1,20 +1,19 @@
-          {{#if logged_in}}
+{{#each posts as |post| }}
 
 <div class="row">
   <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
   </div>
   <div class="card">
-  <h5 class="card-header">Featured</h5>
+    <h5 class="card-title">{{post.title}}</h5>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <p class="card-text">{{Post.text}}</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 </div>
-{{/if}}
-
+{{/each}}
+{{!-- 
 <!-- Loop over each object in the projects array -->
 {{#each projects as |project| }}
 <div class="row mb-4 project">
@@ -38,4 +37,4 @@
     </p>
   </div>
 </div>
-{{/each}}
+{{/each}} --}}
