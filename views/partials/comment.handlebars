@@ -1,0 +1,27 @@
+<section class="card">
+      <header>{{post.title}} 
+      <h6 class="headerInfo">Posted by {{post.user.username}} on {{format_date topic.createdAt}}</h6>
+    </header>
+    <p class="card-body">{{post.content}}</p>
+  </section>
+
+
+    <section class="card">
+      <header>Comment
+      </header>
+      {{#each comments as |comment|}}
+      <p class="card-body" style="display: block;">{{comment.comment}}
+        <br>
+        <h6 style="color: var(--secondary); text-align: right; margin: 10px;"> 
+          -By {{comment.user.username}}
+          <br> {{format_date comment.createdAt}}
+          </h6> 
+      </p style="display: block;">
+      {{/each}}
+
+    </section>
+{{!-- <div>
+    <textarea name="" id="comment"></textarea>
+    <button class="submit">submit</button>
+    <script src="/js/newcomment.js"></script>
+</div> --}}
